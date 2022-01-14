@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">sakuracyann</string>
+    <string name="main" />
+    <string name="move" />
+    <string name="sub">aaaaaa</string>
+    <string name="return_sub">bbbbbbb</string>
 </resources>
