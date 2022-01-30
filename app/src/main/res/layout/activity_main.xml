@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffc0cb"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
 
     <Button
@@ -62,5 +63,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/キラキラ枠" />
+
+    private MediaPlayer mediaPlayer;
+
+    mediaPlayer = MediaPlayer.create(コンテキスト,リソースＩＤ);
+    mediaPlayer.setLooping(true);　// ループ設定
+    mediaPlayer.setVolume(float 左のボリューム,float 右のボリューム);
+    mediaPlayer.start();
 
 </androidx.constraintlayout.widget.ConstraintLayout>
