@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/タイトルロゴ"
+        app:srcCompat="@drawable/rogo"
         tools:ignore="ImageContrastCheck"
         android:contentDescription="TODO" />
 
@@ -62,13 +62,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/キラキラ枠" />
+        app:srcCompat="@drawable/kirakira" />
 
-    private MediaPlayer mediaPlayer;
+    //private MediaPlayer mediaPlayer;
 
-    mediaPlayer = MediaPlayer.create(コンテキスト,リソースＩＤ);
-    mediaPlayer.setLooping(true);　// ループ設定
-    mediaPlayer.setVolume(float 左のボリューム,float 右のボリューム);
-    mediaPlayer.start();
+    /mediaPlayer = MediaPlayer.create(コンテキスト,リソースＩＤ);
+    //mediaPlayer.setLooping(true);　// ループ設定
+    //mediaPlayer.setVolume(float 左のボリューム,float 右のボリューム);
+    //mediaPlayer.start();
 
 </androidx.constraintlayout.widget.ConstraintLayout>
