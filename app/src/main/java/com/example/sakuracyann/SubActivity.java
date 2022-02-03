@@ -14,7 +14,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class SubActivity extends View {
+
+ public class SubActivity extends View {
     public final int First = 1; //状態を表す定数
     public final int Second = 2;
     public final int Third = 3;
@@ -172,6 +173,8 @@ public class SubActivity extends View {
             canvas.drawBitmap(mBmp22, mLeft, mTop, mPaint);
         } else if (state == owari) {
             canvas.drawBitmap(mBmp23, mLeft, mTop, mPaint);
+        }else {
+            Log.d("error", "never come here");
         }
     }
 
@@ -189,7 +192,7 @@ public class SubActivity extends View {
                 state = Third;
             } else if(state == Third) {
                 state = ichi;
-            } else if(state == ichi) {
+            }else if(state == ichi) {
                 state = Forth;
             } else if(state == Forth) {
                 state = ni;
@@ -228,30 +231,10 @@ public class SubActivity extends View {
             } else if(state == roku) {
                 state = owari;
             }else {
-
-                 class MainActivity extends AppCompatActivity {
-
-                    @Override
-                    protected void onCreate(Bundle savedInstanceState) {
-                        super.onCreate(savedInstanceState);
-                        setScreenSub();
-                    }
-
-                    private void setScreenSub(){
-                        setContentView(R.layout.activity_sub2);
-                        Button sendButton = findViewById(R.id.send_button);
-                        sendButton.setOnClickListener(v -> setScreenSub3());
-                    }
-
-                    private void setScreenSub3(){
-                        setContentView(R.layout.subactivity3);
-                    }
-                }
+                Log.d("error", "never come here");
             }
         }
-
         invalidate(); //再描画
         return super.onTouchEvent(event);
     }
-
 }

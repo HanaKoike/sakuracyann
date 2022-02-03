@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
     <com.example.sakuracyann.SubActivity
         android:id="@+id/SubActivity"
@@ -17,11 +18,16 @@
 
     <Button
         android:id="@+id/send_button"
-        android:layout_width="415dp"
-        android:layout_height="162dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="23dp" />
+        android:layout_width="256dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="500dp"
+        android:background="#5E3581"
+        android:fontFeatureSettings="galada"
+        android:text="@string/move"
+        android:textAlignment="center"
+        android:textColor="#f0f8ff"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
