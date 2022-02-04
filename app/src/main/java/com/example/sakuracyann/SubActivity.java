@@ -1,8 +1,5 @@
 package com.example.sakuracyann;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Button;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -41,6 +38,23 @@ import android.view.View;
     public final int roku = 22;
 
     public final int owari = 23;
+    public final int yokattane = 24;
+
+    public final int wann = 25;
+    public final int tuu = 26;
+    public final int surii = 27;
+    public final int foo = 28;
+    public final int faibu = 29;
+    public final int shikkusu = 30;
+    public final int sebunn = 31;
+    public final int eito = 32;
+    public final int nainn = 33;
+    public final int tenn = 34;
+    public final int irebunn = 35;
+    public final int tluwelubu = 36;
+    public final int saathiinn = 37;
+    public final int foothiinn = 38;
+    public final int fifuthiinn = 39;
 
     private Paint mPaint = new Paint(); //描画用のスタイル設定など
     private Bitmap mBmp1 = null; //表示用の Bitmap
@@ -68,9 +82,30 @@ import android.view.View;
     private Bitmap mBmp22 = null;
 
     private Bitmap mBmp23 = null;
+    private Bitmap mBmp24 = null;
+
+    private Bitmap mBmp25 = null;
+    private Bitmap mBmp26 = null;
+    private Bitmap mBmp27 = null;
+    private Bitmap mBmp28 = null;
+    private Bitmap mBmp29 = null;
+    private Bitmap mBmp30 = null;
+    private Bitmap mBmp31 = null;
+    private Bitmap mBmp32 = null;
+    private Bitmap mBmp33 = null;
+    private Bitmap mBmp34 = null;
+    private Bitmap mBmp35 = null;
+    private Bitmap mBmp36 = null;
+    private Bitmap mBmp37 = null;
+    private Bitmap mBmp38 = null;
+    private Bitmap mBmp39 = null;
+
+
 
     private int mTop, mLeft;
     private int mW1, mH1;
+
+    int count; //正答数をカウント
 
     int state; //状態を表す変数
 
@@ -114,6 +149,23 @@ import android.view.View;
         mBmp22 = BitmapFactory.decodeResource(rs, R.mipmap.korera6); //リソースから画像を取得
 
         mBmp23 = BitmapFactory.decodeResource(rs, R.mipmap.normalend); //リソースから画像を取得
+        mBmp24 = BitmapFactory.decodeResource(rs, R.mipmap.happyend); //リソースから画像を取得
+
+        mBmp25 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu1); //リソースから画像を取得
+        mBmp26 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu2); //リソースから画像を取得
+        mBmp27 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu3); //リソースから画像を取得
+        mBmp28 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu4); //リソースから画像を取得
+        mBmp29 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu5); //リソースから画像を取得
+        mBmp30 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu6); //リソースから画像を取得
+        mBmp31 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu7); //リソースから画像を取得
+        mBmp32 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu8); //リソースから画像を取得
+        mBmp33 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu9); //リソースから画像を取得
+        mBmp34 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu10); //リソースから画像を取得
+        mBmp35 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu11); //リソースから画像を取得
+        mBmp36 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu12); //リソースから画像を取得
+        mBmp37 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu13); //リソースから画像を取得
+        mBmp38 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu14); //リソースから画像を取得
+        mBmp39 = BitmapFactory.decodeResource(rs, R.mipmap.tokubetu15); //リソースから画像を取得
 
         mTop = 0;
         mLeft = 0;
@@ -122,6 +174,7 @@ import android.view.View;
 
     }
 
+    //画面の表示
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -173,68 +226,171 @@ import android.view.View;
             canvas.drawBitmap(mBmp22, mLeft, mTop, mPaint);
         } else if (state == owari) {
             canvas.drawBitmap(mBmp23, mLeft, mTop, mPaint);
-        }else {
+        } else if (state == yokattane) {
+            canvas.drawBitmap(mBmp24, mLeft, mTop, mPaint);
+        } else if (state == wann) {
+            canvas.drawBitmap(mBmp25, mLeft, mTop, mPaint);
+        } else if (state == tuu) {
+            canvas.drawBitmap(mBmp26, mLeft, mTop, mPaint);
+        } else if (state == surii) {
+            canvas.drawBitmap(mBmp27, mLeft, mTop, mPaint);
+        } else if (state == foo) {
+            canvas.drawBitmap(mBmp28, mLeft, mTop, mPaint);
+        } else if (state == faibu) {
+            canvas.drawBitmap(mBmp29, mLeft, mTop, mPaint);
+        } else if (state == shikkusu) {
+            canvas.drawBitmap(mBmp30, mLeft, mTop, mPaint);
+        } else if (state == sebunn) {
+            canvas.drawBitmap(mBmp31, mLeft, mTop, mPaint);
+        } else if (state == eito) {
+            canvas.drawBitmap(mBmp32, mLeft, mTop, mPaint);
+        } else if (state == nainn) {
+            canvas.drawBitmap(mBmp33, mLeft, mTop, mPaint);
+        } else if (state == tenn) {
+            canvas.drawBitmap(mBmp34, mLeft, mTop, mPaint);
+        } else if (state == irebunn) {
+            canvas.drawBitmap(mBmp35, mLeft, mTop, mPaint);
+        } else if (state == tluwelubu) {
+            canvas.drawBitmap(mBmp36, mLeft, mTop, mPaint);
+        } else if (state == saathiinn) {
+            canvas.drawBitmap(mBmp37, mLeft, mTop, mPaint);
+        } else if (state == foothiinn) {
+            canvas.drawBitmap(mBmp38, mLeft, mTop, mPaint);
+        } else if (state == fifuthiinn) {
+            canvas.drawBitmap(mBmp39, mLeft, mTop, mPaint);
+        } else {
             Log.d("error", "never come here");
         }
     }
 
+    //タップの処理
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         int x = (int) event.getX();
         int y = (int) event.getY();
+        count  = 0;
 
-//長方形の内部で
         if (x > 0 && x < 100000000 && y > 0 && y < 10000000) {
             if (state == First) { //状態1だったら状態2へ
                 state = Second;
             } else if (state == Second) { //状態2だったら状態3へ
                 state = Third;
-            } else if(state == Third) {
+            } else if (state == Third) {
                 state = ichi;
-            }else if(state == ichi) {
-                state = Forth;
-            } else if(state == Forth) {
+            } else if (state == ichi) {
+                //上の方を選んだらHappyEndに近づく
+                if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                    count++;
+                    state = Forth;
+                } else if (x > 0 && x < 100000 && y > 900 && y < 1100) {
+                    state = Forth;
+                }
+            } else if (state == Forth) {
                 state = ni;
-            } else if(state == ni) {
-                state = Fifth;
-            } else if(state == Fifth) {
+            } else if (state == ni) {
+                //下の方を選んだらHappyEndに近づく
+                if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                    state = Fifth;
+                } else if (x > 0 && x < 100000 && y > 900 && y < 1100) {
+                    count++;
+                    state = Fifth;
+                }
+            } else if (state == Fifth) {
                 state = sann;
-            } else if(state == sann) {
-                state = Sixth;
-            } else if(state == Sixth) {
+            } else if (state == sann) {
+                //上の方を選んだらHappyEndに近づく
+                if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                    count++;
+                    state = Sixth;
+                } else if (x > 0 && x < 100000 && y > 900 && y < 1100) {
+                    state = Sixth;
+                }
+            } else if (state == Sixth) {
                 state = Seventh;
-            } else if(state == Seventh) {
+            } else if (state == Seventh) {
                 state = Eighth;
-            } else if(state == Eighth) {
+            } else if (state == Eighth) {
                 state = Ninth;
-            } else if(state == Ninth) {
+            } else if (state == Ninth) {
                 state = Tenth;
-            } else if(state == Tenth) {
+            } else if (state == Tenth) {
                 state = Eleventh;
-            } else if(state == Eleventh) {
+            } else if (state == Eleventh) {
                 state = yonn;
-            } else if(state == yonn) {
-                state = Twelfth;
-            } else if(state == Twelfth) {
-                state = Thirteenth;
-            } else if(state == Thirteenth) {
-                state = Fourteenth;
-            } else if(state == Fourteenth) {
-                state = Fifteenth;
-            } else if(state == Fifteenth) {
-                state = go;
-            } else if(state == go) {
-                state = Sixteenth;
-            } else if(state == Sixteenth) {
-                state = roku;
-            } else if(state == roku) {
-                state = owari;
-            }else {
-                Log.d("error", "never come here");
-            }
+            } else if (state == yonn) {
+                //下の方を選んだらHappyEndに近づく
+                if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                    state = Twelfth;
+                } else if (x > 0 && x < 100000 && y > 900 && y < 1100) {
+                    count++;
+                    state = Twelfth;
+                }
+            }else if (state == Twelfth) {
+                    state = Thirteenth;
+                } else if (state == Thirteenth) {
+                    state = Fourteenth;
+                } else if (state == Fourteenth) {
+                    state = Fifteenth;
+                } else if (state == Fifteenth) {
+                    state = go;
+                } else if (state == go) {
+                    //下の方を選んだらHappyEndに近づく
+                    if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                        state = Sixteenth;
+                    } else if (x > 0 && x < 100000 && y > 850 && y < 1100) {
+                        count++;
+                        state = Sixteenth;
+                    }
+                } else if (state == Sixteenth) {
+                    state = roku;
+                } else if (state == roku) {
+                    //上の方を選んだらHappyEndに近づく
+                    if (x > 0 && x < 100000 && y > 600 && y < 800) {
+                        count++;
+                        if (count == 1) {
+                            state = wann;
+                        } else {
+                            state = owari;
+                        }
+                    } else if (x > 0 && x < 100000 && y > 900 && y < 1100) {
+                        state = owari;
+                    }
+                } else if (state == wann) {
+                   state = tuu;
+                } else if (state == tuu) {
+                   state = surii;
+                } else if (state == surii) {
+                   state = foo;
+                } else if (state == foo) {
+                   state = faibu;
+                } else if (state == faibu) {
+                   state = shikkusu;
+                } else if (state == shikkusu) {
+                   state = sebunn;
+                } else if (state == sebunn) {
+                   state = eito;
+                } else if (state == eito) {
+                   state = nainn;
+                } else if (state == nainn) {
+                   state = tenn;
+                } else if (state == tenn) {
+                   state = irebunn;
+                } else if (state == irebunn) {
+                   state = tluwelubu;
+                } else if (state == tluwelubu) {
+                   state = saathiinn;
+                } else if (state == saathiinn) {
+                   state = foothiinn;
+                } else if (state == foothiinn) {
+                   state = fifuthiinn;
+                } else if (state == fifuthiinn) {
+                   state = yokattane;
+                }else {
+                    Log.d("error", "never come here");
+                }
         }
         invalidate(); //再描画
         return super.onTouchEvent(event);
     }
-}
+ }

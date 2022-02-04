@@ -16,18 +16,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/send_button"
-        android:layout_width="256dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="500dp"
-        android:background="#5E3581"
-        android:fontFeatureSettings="galada"
-        android:text="@string/move"
-        android:textAlignment="center"
-        android:textColor="#f0f8ff"
-        android:textSize="20sp"
-        android:textStyle="italic" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
