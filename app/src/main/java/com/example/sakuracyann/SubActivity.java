@@ -270,6 +270,7 @@ import android.view.View;
         int x = (int) event.getX();
         int y = (int) event.getY();
         count  = 0;
+        Log.d("SubActivity","変数 count は「" + count + "」");
 
         if (x > 0 && x < 100000000 && y > 0 && y < 10000000) {
             if (state == First) { //状態1だったら状態2へ
@@ -328,13 +329,13 @@ import android.view.View;
                 }
             }else if (state == Twelfth) {
                     state = Thirteenth;
-                } else if (state == Thirteenth) {
+            } else if (state == Thirteenth) {
                     state = Fourteenth;
-                } else if (state == Fourteenth) {
+            } else if (state == Fourteenth) {
                     state = Fifteenth;
-                } else if (state == Fifteenth) {
+            } else if (state == Fifteenth) {
                     state = go;
-                } else if (state == go) {
+            } else if (state == go) {
                     //下の方を選んだらHappyEndに近づく
                     if (x > 0 && x < 100000 && y > 600 && y < 800) {
                         state = Sixteenth;
@@ -342,13 +343,13 @@ import android.view.View;
                         count++;
                         state = Sixteenth;
                     }
-                } else if (state == Sixteenth) {
+            } else if (state == Sixteenth) {
                     state = roku;
-                } else if (state == roku) {
+            } else if (state == roku) {
                     //上の方を選んだらHappyEndに近づく
                     if (x > 0 && x < 100000 && y > 600 && y < 800) {
                         count++;
-                        if (count == 1) {
+                        if (count == 6) {
                             state = wann;
                         } else {
                             state = owari;
